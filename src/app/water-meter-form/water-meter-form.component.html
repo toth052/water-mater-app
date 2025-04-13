@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h2>Online Vízóra Lejelentés</h2>
+  <form [formGroup]="waterMeterForm" (ngSubmit)="onSubmit()">
+    <label>
+      Fogyasztó azonosító:
+      <input formControlName="azonosito" />
+    </label>
+    <label>
+      Név:
+      <input formControlName="nev" />
+    </label>
+    <label>
+      Cím:
+      <input formControlName="cim" />
+    </label>
+    <label>
+      Vízóra állás (m³):
+      <input formControlName="allas" type="number" />
+    </label>
+    <label>
+      Dátum:
+      <input formControlName="datum" type="date" />
+    </label>
+    <button type="submit">Beküldés</button>
+  </form>
+
+  <div *ngIf="submitted && waterMeterForm.invalid" class="error">
+    Kérlek, tölts ki minden mezőt helyesen!
+  </div>
+</div>
